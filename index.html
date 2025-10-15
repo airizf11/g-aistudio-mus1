@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musikipri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- music-metadata-browser for audio file parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/music-metadata-browser@^2.5.10/dist/music-metadata-browser.min.js"></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      /* Custom scrollbar styles */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4a4a4a;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #6a6a6a;
+      }
+      /* Custom styles for range inputs (sliders) */
+      input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 4px;
+        background: transparent;
+        border-radius: 2px;
+        outline: none;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 14px;
+        height: 14px;
+        background: #ffffff;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-top: -5px; /* (thumb height - track height) / 2 */
+        transform: scale(0);
+        transition: transform 0.2s ease-in-out;
+      }
+      /* Show thumb on hover of the parent container (group) */
+      .group:hover input[type="range"]::-webkit-slider-thumb {
+         transform: scale(1);
+      }
+       input[type="range"]::-moz-range-thumb {
+        width: 14px;
+        height: 14px;
+        background: #ffffff;
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+        transform: scale(0);
+        transition: transform 0.2s ease-in-out;
+      }
+      /* Show thumb on hover of the parent container (group) */
+      .group:hover input[type="range"]::-moz-range-thumb {
+        transform: scale(1);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-black text-white">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
